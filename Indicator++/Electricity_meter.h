@@ -1,5 +1,9 @@
 #pragma once
+#include "stdafx.h"
 #include "Counter.h"
+#include <iostream>
+#include <string>   
+#include <windows.h>
 class Electricity_meter : public Counter
 { 
 private: 

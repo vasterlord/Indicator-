@@ -186,5 +186,5 @@ Electricity_meter& Electricity_meter::operator-=(int value)
 
 Electricity_meter::~Electricity_meter()
 { 
-	OutputDebugStringW(L"Electricity meter destructor worked");
+	OutputDebugString(L"Electricity meter destructor worked");
 }

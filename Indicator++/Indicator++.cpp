@@ -12,14 +12,14 @@ using namespace std;
 
 int main()
 {  /////////////// Testing Counter class:
-	/*Counter counter(0, 10000, 100); 	
+	Counter counter(0, 10000, 100); 	
 	counter.operator++(); 
 	counter.operator+=(50);   
 	///system("Color E1"); //good color
 	system("Color F3");  
 	cout << counter;     
 	counter(0, 10000, 1223); 
-	cout << counter;*/ 
+	cout << counter; 
 	////////////////// Testing Electricity_metter class: 
 	Electricity_meter meter(0, 10000, 123, 7, 2); 
 	meter.operator++(); 

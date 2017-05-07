@@ -225,5 +225,5 @@ Counter& Counter::operator-=(int value)
 
 Counter::~Counter()
 {   
-	OutputDebugStringW(L"Counter destructor worked");
+	OutputDebugString(L"Counter destructor worked"); 
 }

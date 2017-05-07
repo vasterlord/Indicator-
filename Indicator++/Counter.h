@@ -12,7 +12,6 @@ private:
 	int _value;
 public:
 	Counter(); 
-	Counter(const Counter &counter);
 	Counter(int minValue, int maxValue,  int value);
 
 	void SetMinValue();

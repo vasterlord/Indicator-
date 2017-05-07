@@ -27,6 +27,9 @@
     <ClInclude Include="Counter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Electricity_meter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Counter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Electricity_meter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

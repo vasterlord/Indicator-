@@ -12,13 +12,6 @@ Counter::Counter()
 	_value = 0;
 }
 
-Counter::Counter(const Counter &counter)
-{
-	this->_minValue = counter._minValue; 
-	this->_maxValue = counter._maxValue;
-	this->_value = counter._value;
-}
-
 Counter::Counter(int minValue, int maxValue, int value)
 {
 	SetMinValue(minValue);
@@ -151,14 +144,29 @@ void Counter::SetValue(int value)
 		cout << str << endl;
 	}
 } 
+ 
+int Counter::GetMinValue()  
+{ 
+	return _minValue;
+}  
+
+int Counter::GetMaxValue()
+{
+	return _maxValue;
+}  
+
+int Counter::GetValue()
+{
+	return _value;
+} 
 
 istream& operator >> (istream& is, Counter& counter)
 {
-	cout << "Input minimum value" << endl;
+	cout << "Input minimum value: " << endl;
 	cin >> counter._minValue;
-	cout << "Input maximum value" << endl;
+	cout << "Input maximum value: " << endl;
 	cin >> counter._maxValue; 
-	cout << "Input value" << endl;
+	cout << "Input value: " << endl;
 	cin >> counter._value;
 	return is;
 }
@@ -217,5 +225,5 @@ Counter& Counter::operator-=(int value)
 
 Counter::~Counter()
 {   
-	OutputDebugStringW(L"Destructor worked");
+	OutputDebugStringW(L"Counter destructor worked");
 }

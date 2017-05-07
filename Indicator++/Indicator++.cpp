@@ -14,7 +14,7 @@ int main()
 	counter.operator++(); 
 	counter.operator+=(50);   
 	///system("Color E1"); //good color
-	system("Color F5");
+	system("Color F3");
 	cout << counter;  
 	_getch();
     return 0;

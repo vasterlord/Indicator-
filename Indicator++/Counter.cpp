@@ -21,42 +21,44 @@ Counter::Counter(int minValue, int maxValue, int value)
 
 void Counter::SetMinValue()
 {
-	cout << "Enter minimum value : \n";
+	cout << " Enter minimum value : \n";
 	try
 	{
 		cin >> _minValue; 
 		if (_minValue < 0)
 		{ 
 			_minValue = 0;
-			throw "Minimum value can't be less then 0";
+			throw " Minimum value can't be less then 0! Minimum value setted by default to 0.";
 		}
 	}
 	catch (char *str)
-	{
+	{ 
+		system("Color F4");
 		cout << str << endl;
 	}	
 } 
 void Counter::SetMaxValue()
 {
-	cout << "Enter maximum value : \n";
+	cout << " Enter maximum value : \n";
 	try
 	{
 		cin >> _maxValue;
 		if (_maxValue <= 0)
 		{ 
 			_maxValue = 1000000000;
-			throw "Maximum value can't be less or equal 0";
+			throw " Maximum value can't be less or equal 0! Maximum value setted by default to 1000000000.";
 		}
 	}
 	catch (char *str)
-	{		
+	{		 
+		system("Color F4");
 		cout << str << endl;
 	}
 } 
 
 void Counter::SetValue()
 {
-	cout << "Enter value : \n";
+	cout << " Enter value : \n";
 	try
 	{
 		cin >> _value;
@@ -64,17 +66,18 @@ void Counter::SetValue()
 		{
 			_value = 0;
 			_minValue = 0;
-			throw("The value must be in  the correct  interval!");
+			throw(" The value must be in  the correct  interval! Value setted by default to 0.");
 		}
 		else if (_value < 0)
 		{
 			_value = 0;
 			_minValue = 0;
-			throw("The value must be non-negative and integer value!");
+			throw(" The value must be non-negative and integer value! Value setted by default to 0.");
 		}
 	}
 	catch (char *str)
-	{
+	{ 
+		system("Color F4");
 		cout << str << endl;
 	}
 }
@@ -86,7 +89,7 @@ void Counter::SetMinValue(int minValue)
 		if (minValue < 0)
 		{
 			this->_minValue = 0;
-			throw "Minimum value can't be less then 0";
+			throw " Minimum value can't be less then 0! Minimum value setted by default to 0.";
 		} 
 		else  
 		{ 
@@ -94,7 +97,8 @@ void Counter::SetMinValue(int minValue)
 		}
 	}
 	catch (char *str)
-	{
+	{ 
+		system("Color F4");
 		cout << str << endl;
 	}
 }
@@ -105,7 +109,7 @@ void Counter::SetMaxValue(int maxValue)
 		if (maxValue <= 0)
 		{
 			this->_maxValue = 1000000000;
-			throw "Maximum value can't be less or equal 0";
+			throw " Maximum value can't be less or equal 0! Maximum value setted by default to 1000000000.";
 		}
 		else
 		{
@@ -113,7 +117,8 @@ void Counter::SetMaxValue(int maxValue)
 		}
 	}
 	catch (char *str)
-	{
+	{ 
+		system("Color F4");
 		cout << str << endl;
 	}
 }
@@ -126,13 +131,13 @@ void Counter::SetValue(int value)
 		{
 			this->_value = 0;
 			this->_minValue = 0;
-			throw("The value must be in  the correct  interval!");
+			throw(" The value must be in  the correct  interval! Value setted by default to 0.");
 		}
 		else if (value < 0)
 		{
 			this->_value = 0;
 			this->_minValue = 0;
-			throw("The value must be non-negative and integer value!");
+			throw(" The value must be non-negative and integer value! Value setted by default to 0.");
 		} 
 		else
 		{
@@ -140,7 +145,8 @@ void Counter::SetValue(int value)
 		}
 	}
 	catch (char *str)
-	{
+	{ 
+		system("Color F4");;
 		cout << str << endl;
 	}
 } 
@@ -162,11 +168,11 @@ int Counter::GetValue()
 
 istream& operator >> (istream& is, Counter& counter)
 {
-	cout << "Input minimum value: " << endl;
+	cout << " Input minimum value: " << endl;
 	cin >> counter._minValue;
-	cout << "Input maximum value: " << endl;
+	cout << " Input maximum value: " << endl;
 	cin >> counter._maxValue; 
-	cout << "Input value: " << endl;
+	cout << " Input value: " << endl;
 	cin >> counter._value;
 	return is;
 }

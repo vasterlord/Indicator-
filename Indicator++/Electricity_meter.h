@@ -17,12 +17,16 @@ public:
 	void SetAccuracy();
 
 	void SetBit(int bit);
-	void SetAccuracy(int accuracy);
+	void SetAccuracy(int accuracy); 
+	 
+	void FullySetting(); 
+	void Reset();
 
 	int GetBit();
 	int GetAccuracy();
 	 
-	double CalcResult();
+	double CalcResult(); 
+	void InitMeters();
 
 	friend istream& operator >> (istream&, Electricity_meter&);
 	friend ostream& operator << (ostream&, Electricity_meter&);

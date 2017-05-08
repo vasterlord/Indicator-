@@ -20,23 +20,24 @@ Electricity_meter::Electricity_meter(int minValue, int maxValue, int value, int 
  
 void Electricity_meter::SetBit()
 {
-	cout << "Enter bits of value : \n";
+	cout << " Enter bits of value : \n";
 	try
 	{
 		cin >> _bit; 
 		if (_bit > 8)
 		{
 			_bit = 8;
-			throw("Maximum value of bit must be less or equal 8. Bits setted by default to 8");
+			throw(" Maximum value of bit must be less or equal 8. Bits setted by default to 8");
 		}
 		else if (_bit < _accuracy)
 		{
 			_bit = 8;
-			throw("Bits can't be less then accuracy. Bits setted by default to 8");
+			throw(" Bits can't be less then accuracy. Bits setted by default to 8");
 		}
 	}
 	catch (char *str)
-	{
+	{ 
+		system("Color F4");
 		cout << str << endl;
 	}
 } 
@@ -50,11 +51,12 @@ void Electricity_meter::SetAccuracy()
 		if (_accuracy < 0 || _accuracy > _bit)
 		{
 			_bit = 8;
-			throw("Accuracy can't be higher then bits. Accuracy setted by default to 1");
+			throw(" Accuracy can't be higher then bits. Accuracy setted by default to 1");
 		}
 	}
 	catch (char *str)
-	{
+	{ 
+		system("Color F4");
 		cout << str << endl;
 	}
 } 
@@ -66,7 +68,7 @@ void Electricity_meter::SetBit(int bit)
 		if (bit > 8)
 		{
 			_bit = 8;
-			throw("Maximum value of bit must be less or equal 8. Bits setted by default to 8");
+			throw(" Maximum value of bit must be less or equal 8. Bits setted by default to 8");
 		}
 		else if (bit < _accuracy)
 		{
@@ -79,7 +81,8 @@ void Electricity_meter::SetBit(int bit)
 		}
 	}
 	catch (char *str)
-	{
+	{ 
+		system("Color F4");
 		cout << str << endl;
 	}
 }
@@ -91,7 +94,7 @@ void Electricity_meter::SetAccuracy(int accuracy)
 		if (accuracy < 0 || accuracy > _bit)
 		{
 			_bit = 8;
-			throw("Accuracy can't be higher then bits. Accuracy setted by default to 1");
+			throw(" Accuracy can't be higher then bits. Accuracy setted by default to 1");
 		} 
 		else
 		{
@@ -100,10 +103,28 @@ void Electricity_meter::SetAccuracy(int accuracy)
 	}
 	catch (char *str)
 	{
+		system("Color F4");
 		cout << str << endl;
 	}
 }
-   
+  
+void Electricity_meter::Reset()  
+{ 
+	SetMinValue(0); 
+	SetMaxValue(1000000000); 
+	SetValue(0);
+	SetBit(8); 
+	SetAccuracy(3);  
+}   
+
+void Electricity_meter::FullySetting()
+{
+	SetMinValue();
+	SetMaxValue();
+	SetBit();
+	SetAccuracy();
+}
+
 int Electricity_meter::GetBit()  
 { 
 	return _bit;
@@ -117,16 +138,25 @@ int Electricity_meter::GetAccuracy()
 double Electricity_meter::CalcResult()
 {
 	return (double)this->GetValue() / pow(10, _accuracy);
-} 
+}  
+ 
+void Electricity_meter::InitMeters()
+{
+	SetMinValue(); 
+	SetMaxValue();
+	SetValue(); 
+	SetBit(); 
+	SetAccuracy();
+}
 
 istream& operator >> (istream& is, Electricity_meter& meter)
 {
 	meter.SetMinValue(); 
 	meter.SetMaxValue();  
 	meter.SetValue();
-	cout << "Input bits of value: " << endl;
+	cout << " Input bits of value: " << endl;
 	cin >> meter._bit; 
-	cout << "Input accuracy of value: " << endl;
+	cout << " Input accuracy of value: " << endl;
 	cin >> meter._accuracy;
 	return is;
 }

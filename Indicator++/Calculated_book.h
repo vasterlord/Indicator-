@@ -8,24 +8,36 @@
 class Calculated_book
 { 
 private:  
-	string _date;
+	int _numberMonth;
 	double _price;  
 	Counter *_book; 
-	int _size;
+	int _size; 
+	double * Total_prices; 
+	double * Total_electricity; 
+	string * Name_month;
 public:
 	Calculated_book();   
-	Calculated_book(string date, double price, int size); 
+	Calculated_book(int numberMonth, double price, int size);
 
-	/*void SetDate(); 
-	void SetDate(string date);
+	void SetNumberMonth();
+	void SetNumberMonth(int numberMoth);
 	 
 	void SetPrice();  
 	void SetPrice(double price); 
-	 */
-	//Electricity_meter& operator[](int x);
-	//double GetTotalElectricity();  
-	//double GetTotalPrice();
+	 
+	int GetNumberMonth();  
+	double GetElectricityPerMonth();
+	double	GetPricePerMonth();
+	double GetPrice();
+	
+	double GetTotalElectricity();  
+	double GetTotalPrice();  
+	string GetMonthName();
+	void SafeToMonth(); 
+	void InputMeters();
+	void OutputMeters();  
 
+	Electricity_meter& operator[](int x);
 	virtual ~Calculated_book();
 };
 

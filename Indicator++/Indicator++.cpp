@@ -26,7 +26,7 @@ int main()
 	cout << " Enter price value for one KWh : \n";
 	cin >> price; 
 	int number = 0; 
-	double additionalValue = 2; 
+	int additionalValue = 2; 
 		Calculated_book c(numberMonth, price, size);	
 	while (choice == "y")
 	{
@@ -116,13 +116,13 @@ int main()
 				system("Color F1");
 				cout << " Input number of electricity meter :" << endl;
 				cin >> number;  
-				c.operator[](number).FullySetting();
+				//c.operator[](number).FullySetting();
 				break;  
 			case 12:    
 				system("Color F4");
 				cout << " Input number of electricity meter :" << endl;
 				cin >> number;
-				c.operator[](number).Reset(); 
+				//c.operator[](number).Reset(); 
 				cout << " Reset of electricity meter with number " << number << " done successfully" << endl;
 				break;
 			case 13: 

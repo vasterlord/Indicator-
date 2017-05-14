@@ -37,7 +37,7 @@ public:
 	void InputMeters();
 	void OutputMeters();  
 
-	Electricity_meter& operator[](int x);
+	Counter& operator[](int x);
 	virtual ~Calculated_book();
 };
 

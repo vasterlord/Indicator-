@@ -194,7 +194,7 @@ double Calculated_book::GetTotalPrice()
 	return WholElectricity * _price;
 }
 
-Electricity_meter& Calculated_book::operator[](int x)
+Counter& Calculated_book::operator[](int x)
 {
 	try
 	{ 
@@ -204,7 +204,7 @@ Electricity_meter& Calculated_book::operator[](int x)
 		}
 		else
 		{ 
-			return dynamic_cast <Electricity_meter&>(_book[x]);
+			return _book[x];
 		}
 	}
 	catch (char *str)

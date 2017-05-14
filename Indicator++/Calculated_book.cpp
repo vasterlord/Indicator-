@@ -242,7 +242,6 @@ void Calculated_book::ResetAll()
 		iter->Reset();
 		++iter;
 	}
-
 }
 
 Calculated_book::~Calculated_book()

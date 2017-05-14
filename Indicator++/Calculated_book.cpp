@@ -10,20 +10,6 @@
 
 Calculated_book::Calculated_book()
 {   
-	SetNumberMonth();
-	SetPrice(); 
-	_book = new Counter[5];
-	_book[0] = Electricity_meter(0, 100000, 15437, 7, 3); 
-	Total_prices = new double[12];
-	for (int i = 0; i < 12; i++)
-	{
-		Total_prices[i] = 0;
-	}
-	Total_electricity = new double[12];
-	for (int i = 0; i < 12; i++)
-	{
-		Total_electricity[i] = 0;
-	}
 } 
 
 Calculated_book::Calculated_book(int numberMonth, double price, int size)
@@ -183,7 +169,7 @@ double Calculated_book::GetTotalElectricity()
 	double WholElectricity = 0;
 	for (int i = 0; i < _size; i++)
 	{
-		WholElectricity += dynamic_cast <Electricity_meter&>(_book[i]).CalcResult();
+		WholElectricity += _book[i].CalcResult();
 	} 
 	return WholElectricity;
 } 
@@ -194,7 +180,7 @@ double Calculated_book::GetTotalPrice()
 	return WholElectricity * _price;
 }
 
-Counter& Calculated_book::operator[](int x)
+Electricity_meter& Calculated_book::operator[](int x)
 {
 	try
 	{ 
@@ -226,10 +212,12 @@ void Calculated_book::SafeToMonth()
 }
  
 void Calculated_book::OutputMeters()  
-{ 
+{  
+	system("Color F1");
 	for (int i = 0; i < _size;i++)
 	{
-		dynamic_cast <Electricity_meter&>(_book[i]).Show();
+		cout << " Electricity meter #" << i << endl;
+		_book[i].Show();  
 	}
 }
   
@@ -238,12 +226,25 @@ void Calculated_book::InputMeters()
 	for (int i = 0; i < _size; i++)
 	{  
 		cout << " Input data of electricity meter  number " << i << endl;
-		Electricity_meter meter; 
-		meter.InitMeters();   
-		_book[i] = Electricity_meter(meter.GetMinValue(), meter.GetMaxValue(), meter.GetValue(), meter.GetBit(), meter.GetAccuracy()); 
-	}
+		Electricity_meter meter;
+		meter.Init();   
+		_book[i] = meter;
+	} 
+	cout << " Input data of electricity meter  number ";
 }
- 
+  
+void Calculated_book::ResetAll()  
+{ 
+	Iterator iter = _book;
+
+	for (int i = 0; i < _size; i++)
+	{
+		iter->Reset();
+		++iter;
+	}
+
+}
+
 Calculated_book::~Calculated_book()
 { 
 	OutputDebugString(L"Calculated_book destructor worked");  

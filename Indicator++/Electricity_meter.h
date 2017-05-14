@@ -17,16 +17,9 @@ public:
 	void SetAccuracy();
 
 	void SetBit(int bit);
-	void SetAccuracy(int accuracy); 
-	 
-	void FullySetting(); 
-	void Reset();
-
+	void SetAccuracy(int accuracy);  
 	int GetBit();
 	int GetAccuracy();
-	 
-	double CalcResult(); 
-	void InitMeters();
 
 	friend istream& operator >> (istream&, Electricity_meter&);
 	friend ostream& operator << (ostream&, Electricity_meter&);
@@ -38,7 +31,11 @@ public:
 	Electricity_meter& operator+=(int value);
 	Electricity_meter& operator-=(int value);
 
-	void Show() override;
+	void Show()override; 
+	void Setting()override;
+	void Reset()override;
+	void Init()override; 
+	double CalcResult()override;
 
 	virtual ~Electricity_meter();
 };

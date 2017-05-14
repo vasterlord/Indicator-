@@ -19,10 +19,12 @@ Electricity_meter::Electricity_meter(int minValue, int maxValue, int value, int 
 } 
  
 void Electricity_meter::SetBit()
-{
+{ 
+	system("Color F1");
 	cout << " Enter bits of value : \n";
 	try
-	{
+	{ 
+		system("Color F1");
 		cin >> _bit; 
 		if (_bit > 8)
 		{
@@ -43,10 +45,12 @@ void Electricity_meter::SetBit()
 } 
 
 void Electricity_meter::SetAccuracy()
-{
+{ 
+	system("Color F1");
 	cout << "Enter accuracy of value : \n";
 	try
 	{
+		system("Color F1");
 		cin >> _accuracy;
 		if (_accuracy < 0 || _accuracy > _bit)
 		{
@@ -107,23 +111,6 @@ void Electricity_meter::SetAccuracy(int accuracy)
 		cout << str << endl;
 	}
 }
-  
-void Electricity_meter::Reset()  
-{ 
-	SetMinValue(0); 
-	SetMaxValue(1000000000); 
-	SetValue(0);
-	SetBit(8); 
-	SetAccuracy(3);  
-}   
-
-void Electricity_meter::FullySetting()
-{
-	SetMinValue();
-	SetMaxValue();
-	SetBit();
-	SetAccuracy();
-}
 
 int Electricity_meter::GetBit()  
 { 
@@ -134,35 +121,62 @@ int Electricity_meter::GetAccuracy()
 { 
 	return _accuracy;
 } 
+  
+void Electricity_meter::Reset()
+{
+	SetMinValue(0);
+	SetMaxValue(1000000000);
+	SetValue(0);
+	SetBit(8);
+	SetAccuracy(3);
+} 
+
+void Electricity_meter::Setting()
+{
+	SetMinValue();
+	SetMaxValue();
+	SetBit();
+	SetAccuracy();
+} 
 
 double Electricity_meter::CalcResult()
 {
 	return (double)this->GetValue() / pow(10, _accuracy);
 }  
  
-void Electricity_meter::InitMeters()
-{
-	SetMinValue(); 
-	SetMaxValue();
-	SetValue(); 
-	SetBit(); 
-	SetAccuracy();
+void Electricity_meter::Init()
+{ 
+	system("Color F1");
+	SetMinValue();  
+	system("Color F1");
+	SetMaxValue(); 
+	system("Color F1"); 
+	SetValue();  
+	system("Color F1");
+	SetBit();  
+	system("Color F1");
+	SetAccuracy(); 
 }
 
 istream& operator >> (istream& is, Electricity_meter& meter)
-{
-	meter.SetMinValue(); 
-	meter.SetMaxValue();  
+{ 
+	system("Color F1");
+	meter.SetMinValue();  
+	system("Color F1");
+	meter.SetMaxValue();   
+	system("Color F1");
 	meter.SetValue();
 	cout << " Input bits of value: " << endl;
-	cin >> meter._bit; 
+	cin >> meter._bit;  
+	system("Color F1");
 	cout << " Input accuracy of value: " << endl;
 	cin >> meter._accuracy;
 	return is;
 }
 
 ostream& operator<<(ostream& os, Electricity_meter& meter)
-{
+{ 
+	system("Color F1");
 	cout << " Value = " << meter.GetValue() << ", minimum value =  " << meter.GetMinValue() 
 	<< ", maximum value = " << meter.GetMaxValue() 
 	<< ", bits of value value = " << meter._bit << ", accuracy of value value = " << meter._accuracy << endl;
@@ -170,7 +184,8 @@ ostream& operator<<(ostream& os, Electricity_meter& meter)
 }
 
 void Electricity_meter::Show()
-{
+{ 
+	system("Color F1");
 	Counter::Show(); 
 	cout << " Bits of value value = " << _bit << ", accuracy of value value = " << _accuracy << ";" << endl;
 }

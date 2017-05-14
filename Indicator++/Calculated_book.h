@@ -1,7 +1,8 @@
 #pragma once 
 #include "stdafx.h"
 #include "Counter.h" 
-#include "Electricity_meter.h"
+#include "Electricity_meter.h" 
+#include "Iterator.h"
 #include <iostream>
 #include <string>   
 #include <windows.h>
@@ -10,7 +11,7 @@ class Calculated_book
 private:  
 	int _numberMonth;
 	double _price;  
-	Counter *_book; 
+	Electricity_meter *_book; 
 	int _size; 
 	double * Total_prices; 
 	double * Total_electricity; 
@@ -35,9 +36,10 @@ public:
 	string GetMonthName();
 	void SafeToMonth(); 
 	void InputMeters();
-	void OutputMeters();  
+	void OutputMeters();   
+	void ResetAll();
 
-	Counter& operator[](int x);
+	Electricity_meter& operator[](int x);
 	virtual ~Calculated_book();
 };
 

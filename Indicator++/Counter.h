@@ -35,7 +35,12 @@ public:
 	Counter& operator+=(int value);
 	Counter& operator-=(int value);
 
-	virtual void Show();
+	virtual void Show(); 
+	virtual void Setting();
+	virtual void Reset();
+
+	virtual double CalcResult();
+	virtual void Init();
 	virtual ~Counter();
 };
 

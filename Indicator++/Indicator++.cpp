@@ -27,7 +27,7 @@ int main()
 	cin >> price; 
 	int number = 0; 
 	int additionalValue = 2; 
-		Calculated_book c(numberMonth, price, size);	
+	Calculated_book c(numberMonth, price, size);	
 	while (choice == "y")
 	{
 		system("Color F1");
@@ -42,9 +42,10 @@ int main()
 		cout << " 9 - Change number of month " << endl; 
 		cout << " 10 - Change price for one KWh " << endl;
 		cout << " 11 - Change data of one electricity meter (without change value) " << endl; 
-		cout << " 12 - Reset one of electricity meters " << endl;
-		cout << " 13 - Output one electricity meter " << endl;
-		cout << " 14 - Output electricity meters " << endl;
+		cout << " 12 - Reset one of electricity meters " << endl; 
+		cout << " 13 - Reset all electricity meters " << endl;
+		cout << " 14 - Output one electricity meter " << endl;
+		cout << " 15 - Output electricity meters " << endl;
 			cout << "Your choice: "; cin >> choose;
 			cout << endl;
 			switch (choose)
@@ -116,22 +117,27 @@ int main()
 				system("Color F1");
 				cout << " Input number of electricity meter :" << endl;
 				cin >> number;  
-				//c.operator[](number).FullySetting();
+				c.operator[](number).Setting();
 				break;  
 			case 12:    
 				system("Color F4");
 				cout << " Input number of electricity meter :" << endl;
 				cin >> number;
-				//c.operator[](number).Reset(); 
+				c.operator[](number).Reset(); 
 				cout << " Reset of electricity meter with number " << number << " done successfully" << endl;
+				break; 
+			case 13:
+				system("Color F4");
+				c.ResetAll();
+				cout << " Reseted all electricity meters " << number << " done successfully" << endl;
 				break;
-			case 13: 
+			case 14: 
 				system("Color F1");
 				cout << " Input number of electricity meter :" << endl;
 				cin >> number;
 				c.operator[](number).Show();
 				break; 
-			case 14: 
+			case 15: 
 				system("Color F1");
 				c.OutputMeters();
 				break; 

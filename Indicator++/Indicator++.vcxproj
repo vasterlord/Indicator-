@@ -148,6 +148,7 @@
     <ClInclude Include="Calculated_book.h" />
     <ClInclude Include="Counter.h" />
     <ClInclude Include="Electricity_meter.h" />
+    <ClInclude Include="Iterator.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -157,6 +158,7 @@
     <ClCompile Include="Counter.cpp" />
     <ClCompile Include="Electricity_meter.cpp" />
     <ClCompile Include="Indicator++.cpp" />
+    <ClCompile Include="Iterator.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -24,6 +24,7 @@ void Counter::SetMinValue()
 	cout << " Enter minimum value : \n";
 	try
 	{
+		system("Color F1");
 		cin >> _minValue; 
 		if (_minValue < 0)
 		{ 
@@ -41,7 +42,8 @@ void Counter::SetMaxValue()
 {
 	cout << " Enter maximum value : \n";
 	try
-	{
+	{ 
+		system("Color F1");
 		cin >> _maxValue;
 		if (_maxValue <= 0)
 		{ 
@@ -60,7 +62,8 @@ void Counter::SetValue()
 {
 	cout << " Enter value : \n";
 	try
-	{
+	{ 
+		system("Color F1");
 		cin >> _value;
 		if ((_value >= _maxValue) || (_value < _minValue))
 		{
@@ -167,7 +170,8 @@ int Counter::GetValue()
 } 
 
 istream& operator >> (istream& is, Counter& counter)
-{
+{ 
+	system("Color F1");
 	cout << " Input minimum value: " << endl;
 	cin >> counter._minValue;
 	cout << " Input maximum value: " << endl;
@@ -178,15 +182,47 @@ istream& operator >> (istream& is, Counter& counter)
 }
 
 ostream& operator<<(ostream& os, Counter& counter)
-{
+{ 
+	system("Color F1");
 	cout << " Value = " << counter._value<< ", minimum value =  " << counter._minValue << ", maximum value = " << counter._maxValue << endl;
 	return os;
 }
 
 void Counter::Show()
-{
+{ 
+	system("Color F1");
 	cout << " Value = " <<_value << ", minimum value =  " <<_minValue << ", maximum value = " <<_maxValue << endl;
-} 
+}  
+ 
+void Counter::Reset()
+{ 
+	SetMinValue(0);
+	SetMaxValue(1000000000);
+	SetValue(0);
+}
+
+void Counter::Setting()
+{ 
+	system("Color F1");
+	SetMinValue(); 
+	system("Color F1");
+	SetMaxValue();
+}
+
+double Counter::CalcResult()
+{
+	return (double)this->GetValue();
+}
+
+void Counter::Init()
+{ 
+	system("Color F1");
+	SetMinValue(); 
+	system("Color F1");
+	SetMaxValue(); 
+	system("Color F1");
+	SetValue();
+}
 
 Counter& Counter::operator=(const Counter& counter)
 {

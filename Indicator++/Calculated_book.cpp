@@ -12,7 +12,7 @@ Calculated_book::Calculated_book()
 {   
 	SetNumberMonth();
 	SetPrice(); 
-	_book = new Electricity_meter[5];
+	_book = new Counter[5];
 	_book[0] = Electricity_meter(0, 100000, 15437, 7, 3); 
 	Total_prices = new double[12];
 	for (int i = 0; i < 12; i++)
@@ -72,7 +72,7 @@ void Calculated_book::SetNumberMonth()
 { 
 	try
 	{
-		cout << " Enter number of month : \n";
+		cout << " Enter index of month : \n";
 		cin >> _numberMonth;
 		if (_numberMonth <= 0)
 		{
@@ -93,7 +93,7 @@ void Calculated_book::SetPrice()
 {
 	try
 	{
-		cout << " Enter number price for one KWh : \n";
+		cout << " Enter price value for one KWh : \n";
 		cin >> _price;
 		if (_price <= 0)
 		{

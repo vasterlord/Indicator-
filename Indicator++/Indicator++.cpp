@@ -21,9 +21,9 @@ int main()
 	int numberMonth = 5;
 	cout << " Input size of calculated book :" << endl; 
 	cin >> size;  
-	cout << " Enter number of month : \n";
+	cout << " Enter index of month : \n";
 	cin >> numberMonth;
-	cout << " Enter number price for one KWh : \n";
+	cout << " Enter price value for one KWh : \n";
 	cin >> price; 
 	int number = 0; 
 	double additionalValue = 2; 
